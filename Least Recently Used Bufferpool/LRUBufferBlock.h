@@ -24,10 +24,8 @@ public:
     }
     ~BufferBlock() {}
     void getData(int pos, int sz, char* data) {
-        pos %= size;
-        for (int i = 0; i < sz; i++) {
-            data[i] = block[pos + i];
-        }
+        pos %= size; //we need to reduce within range of 4096
+        memcpy(data, block + pos, sz); //most likely the fastest-essential tool to use here
     }
     void setID(int id) {
         blockID = id;
