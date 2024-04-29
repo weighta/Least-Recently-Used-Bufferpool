@@ -38,5 +38,12 @@ void printChars(char* ch, int sz, int blkid) {
     cout << "\"\n";
 }
 
+template<typename E>
+inline void swap(E arr, int a, int b) {
+    E tmp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = tmp;
+}
+
 #endif	/* CONSTANTS_H */
 
